@@ -11,30 +11,29 @@ using namespace std;
 class Data {
 
 private:
-    string title;
-    int year;
-    double score;
-    int runtime;
-    string genre;
-    string rating;
+    double miles;
+    int duration;
+    double price;
+    string payment;
 
 public:
     //Overloads the output stream operator
     friend ostream& operator<<(ostream& os, const Data& data);
 
     //Overloads the comparison operators
-    bool operator<(const Data &scoring) const;
+    bool operator<(const Data &length) const;
 
     //Overloads the comparison operators
-    bool operator>(const Data &scoring) const;
+    bool operator>(const Data &length) const;
 
     //Default Constructor
     Data();
 
     //Alternate Constructor
-    Data(string t, int y, double s, int runt, string g, string rate);
+    Data(double m, int d, double p, string pay);
 
-};
+
+    };
 
 
 #endif //PROJECT9_DATA_H

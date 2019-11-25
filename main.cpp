@@ -173,12 +173,12 @@ int main() {
     ifstream dataFile;
 
     //Link csv file
-    dataFile.open("../data.csv");
+    dataFile.open("../TaxiData.csv");
     if (!dataFile.is_open()) {
         cout << "File not open!" << endl;
         return 1;
     } else {
-        cout << "Reading data.csv..." << endl;
+        cout << "Reading TaxiData.csv..." << endl;
     }
 
     //read the file by each variable line
