@@ -8,7 +8,8 @@ using namespace std;
 //Different sorting algorithm functions
 
 //Bubble Sort from slides
-template <typename T> void bubbleSort(vector<T> &arr, int size) {
+template <typename T>
+void bubbleSort(vector<T> &arr, int size) {
     int i, j;
     bool swapped;
     for (i = 0; i < size - 1; i++) {
@@ -40,8 +41,8 @@ void MinSort(vector<T> &arr, int size) {
 }
 
 //Quick Sort (and Partition) from ZyBooks
-
-int Partition(int numbers[], int i, int k) {
+template <typename T>
+int Partition(T numbers[], int i, int k) {
     int l;
     int h;
     int midpoint;
@@ -84,8 +85,8 @@ int Partition(int numbers[], int i, int k) {
     }
     return h;
 }
-
-void Quicksort(int numbers[], int i, int k) {
+template <typename T>
+void Quicksort(T numbers[], int i, int k) {
     int j;
 
     //Base case: If there are 1 or zero elements to sort, partition is already sorted
@@ -102,8 +103,8 @@ void Quicksort(int numbers[], int i, int k) {
 }
 
 //Merge Sort from ZyBooks
-
-void Merge(int numbers[], int i, int j, int k) {
+template <typename T>
+void Merge(T numbers[], int i, int j, int k) {
     int mergedSize; // Size of merged partition
     int mergePos; // Position to insert merged number
     int leftPos; // Position of elements in left partition
@@ -149,8 +150,8 @@ void Merge(int numbers[], int i, int j, int k) {
     }
     delete[] mergedNumbers;
 }
-
-void MergeSort(int numbers[], int i, int k) {
+template <typename T>
+void MergeSort(T numbers[], int i, int k) {
     int j;
 
     if (i < k) {
