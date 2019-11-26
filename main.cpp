@@ -8,7 +8,7 @@ using namespace std;
 //Different sorting algorithm functions
 
 //Bubble Sort from slides
-template <typename T>
+template<typename T>
 void bubbleSort(vector<T> &arr, int size) {
     int i, j;
     bool swapped;
@@ -41,7 +41,7 @@ void MinSort(vector<T> &arr, int size) {
 }
 
 //Quick Sort (and Partition) from ZyBooks
-template <typename T>
+template<typename T>
 int Partition(T numbers[], int i, int k) {
     int l;
     int h;
@@ -85,7 +85,8 @@ int Partition(T numbers[], int i, int k) {
     }
     return h;
 }
-template <typename T>
+
+template<typename T>
 void Quicksort(T numbers[], int i, int k) {
     int j;
 
@@ -103,7 +104,7 @@ void Quicksort(T numbers[], int i, int k) {
 }
 
 //Merge Sort from ZyBooks
-template <typename T>
+template<typename T>
 void Merge(T numbers[], int i, int j, int k) {
     int mergedSize; // Size of merged partition
     int mergePos; // Position to insert merged number
@@ -150,7 +151,8 @@ void Merge(T numbers[], int i, int j, int k) {
     }
     delete[] mergedNumbers;
 }
-template <typename T>
+
+template<typename T>
 void MergeSort(T numbers[], int i, int k) {
     int j;
 
@@ -170,22 +172,22 @@ void MergeSort(T numbers[], int i, int k) {
 int main() {
 
     //Create all the vectors
-    vector <Data> dataV;
+    vector<Data> dataV;
 
     //Four copies of dataV
-    vector <Data> dataV_B;
-    vector <Data> dataV_S;
-    vector <Data> dataV_Q;
-    vector <Data> dataV_M;
+    vector<Data> dataV_B;
+    vector<Data> dataV_S;
+    vector<Data> dataV_Q;
+    vector<Data> dataV_M;
 
     //vector of random integers
-    vector <int> intV;
+    vector<int> intV;
 
     //Four copies of intV
-    vector <int> intV_B;
-    vector <int> intV_S;
-    vector <int> intV_Q;
-    vector <int> intV_M;
+    vector<int> intV_B;
+    vector<int> intV_S;
+    vector<int> intV_Q;
+    vector<int> intV_M;
 
 
     //declare fstream type variables
