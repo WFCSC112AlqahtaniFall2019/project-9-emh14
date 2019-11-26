@@ -8,7 +8,7 @@ using namespace std;
 //Different sorting algorithm functions
 
 //Bubble Sort from slides
-template <typename T> void bubbleSort(vector<T> &arra, int size) {
+template <typename T> void bubbleSort(vector<T> &arr, int size) {
     int i, j;
     bool swapped;
     for (i = 0; i < size - 1; i++) {
@@ -25,7 +25,7 @@ template <typename T> void bubbleSort(vector<T> &arra, int size) {
 
 //Selection Sort from slides (min to max)
 template<typename T>
-void MinSort(vector<T> &arra, int size) {
+void MinSort(vector<T> &arr, int size) {
     int min;
     for (int i = 0; i < size - 1; ++i) {
 // Find index of smallest remaining element
