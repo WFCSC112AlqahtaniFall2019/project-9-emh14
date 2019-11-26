@@ -169,6 +169,25 @@ void MergeSort(T numbers[], int i, int k) {
 
 int main() {
 
+    //Create all the vectors
+    vector <Data> dataV;
+
+    //Four copies of dataV
+    vector <Data> dataV_B;
+    vector <Data> dataV_S;
+    vector <Data> dataV_Q;
+    vector <Data> dataV_M;
+
+    //vector of random integers
+    vector <int> intV;
+
+    //Four copies of intV
+    vector <int> intV_B;
+    vector <int> intV_S;
+    vector <int> intV_Q;
+    vector <int> intV_M;
+
+
     //declare fstream type variables
     ifstream dataFile;
 
@@ -206,6 +225,7 @@ int main() {
         Data newData = Data(mile, duration, price, payment);
 
         //Repeatedly places the Data objects into a vector
+        dataV.emplace_back(newData);
     }
 
     return 0;
