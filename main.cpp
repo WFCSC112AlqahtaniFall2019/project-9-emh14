@@ -8,8 +8,7 @@ using namespace std;
 //Different sorting algorithm functions
 
 //Bubble Sort from slides
-template<typename T>
-<typename T> void bubbleSort(vector<T> &arra, int size) {
+template <typename T> void bubbleSort(vector<T> &arra, int size) {
     int i, j;
     bool swapped;
     for (i = 0; i < size - 1; i++) {
@@ -184,14 +183,29 @@ int main() {
     //read the file by each variable line
     while (!dataFile.eof()) {
 
+        string mileString;
+        getline(dataFile, mileString, ',');
+
+        string durationString;
+        getline(dataFile, durationString, ',');
+
+        string priceString;
+        getline(dataFile, priceString, ',');
+
+        string payment;
+        getline(dataFile, payment);
+
+        //Convert from strings to correct data type
+        double mile = stod(mileString);
+        int duration = stoi(durationString);
+        double price = stod(priceString);
 
 
         //Stores each item in to a Data class object
-        Data newData = Data();
+        Data newData = Data(mile, duration, price, payment);
 
         //Repeatedly places the Data objects into a vector
     }
-
 
     return 0;
 }
