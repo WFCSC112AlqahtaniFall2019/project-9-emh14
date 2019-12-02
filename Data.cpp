@@ -27,13 +27,13 @@ bool Data::operator>(const Data &length) const {
 //Default Constructor
 Data::Data(){
     miles = 0.0;
-    duration = 0;
+    duration = 0.0;
     price = 0.0;
     payment = " ";
 }
 
 //Alternate Constructor
-Data::Data(double m, int d, double p, string pay){
+Data::Data(double m, double d, double p, string pay){
     miles = m;
     duration = d;
     price = p;

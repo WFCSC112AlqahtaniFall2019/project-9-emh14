@@ -171,24 +171,9 @@ void MergeSort(T numbers[], int i, int k) {
 
 int main() {
 
-    //Create all the vectors
+    //Create new vectors
     vector<Data> dataV;
-
-    //Four copies of dataV
-    vector<Data> dataV_B;
-    vector<Data> dataV_S;
-    vector<Data> dataV_Q;
-    vector<Data> dataV_M;
-
-    //vector of random integers
     vector<int> intV;
-
-    //Four copies of intV
-    vector<int> intV_B;
-    vector<int> intV_S;
-    vector<int> intV_Q;
-    vector<int> intV_M;
-
 
     //declare fstream type variables
     ifstream dataFile;
@@ -219,7 +204,7 @@ int main() {
 
         //Convert from strings to correct data type
         double mile = stod(mileString);
-        int duration = stoi(durationString);
+        double duration = stod(durationString);
         double price = stod(priceString);
 
 
@@ -229,6 +214,26 @@ int main() {
         //Repeatedly places the Data objects into a vector
         dataV.emplace_back(newData);
     }
+
+    //Four copies of dataV
+    vector<Data> dataV_B = dataV;
+    vector<Data> dataV_S = dataV;
+    vector<Data> dataV_Q = dataV;
+    vector<Data> dataV_M = dataV;
+
+
+    srand(time(NULL)); // seed random number generator with time
+
+    //fill vector with random integers
+    for (int i = 0; i < intV.size(); i++) {
+        intV[i] = rand() % 100;
+    }
+
+    //Four copies of intV
+    vector<int> intV_B = intV;
+    vector<int> intV_S = intV;
+    vector<int> intV_Q = intV;
+    vector<int> intV_M = intV;
 
     return 0;
 }

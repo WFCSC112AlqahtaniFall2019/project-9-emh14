@@ -12,7 +12,7 @@ class Data {
 
 private:
     double miles;
-    int duration;
+    double duration;
     double price;
     string payment;
 
@@ -30,8 +30,7 @@ public:
     Data();
 
     //Alternate Constructor
-    Data(double m, int d, double p, string pay);
-
+    Data(double m, double d, double p, string pay);
 
     };
 
