@@ -235,5 +235,22 @@ int main() {
     vector<int> intV_Q = intV;
     vector<int> intV_M = intV;
 
+    //sort the vectors using the implemented algorithms
+    //Bubble Sort
+    bubbleSort(dataV_B, 100000);
+    bubbleSort(intV_B, 100000);
+
+    //Selection Sort
+    MinSort(dataV_S, 100000);
+    MinSort(intV_S, 100000);
+
+    //Quick Sort
+    Quicksort(dataV_Q, 0, 100000);
+    Quicksort(intV_Q, 0, 100000);
+
+    //Merge Sort
+    MergeSort(dataV_M, 0, 100000);
+    MergeSort(intV_M, 0, 100000);
+
     return 0;
 }
