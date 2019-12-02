@@ -24,6 +24,18 @@ bool Data::operator>(const Data &length) const {
     return miles > length.miles;
 }
 
+//Overloads the copy assignment operator
+Data& Data::operator=(const Data &copyData){
+    Data temp (copyData);
+
+    swap(temp.miles, miles);
+    swap(temp.duration, duration);
+    swap(temp.price, price);
+    swap(temp.payment, payment);
+
+    return *this;
+}
+
 //Default Constructor
 Data::Data(){
     miles = 0.0;

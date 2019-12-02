@@ -26,6 +26,9 @@ public:
     //Overloads the comparison operators
     bool operator>(const Data &length) const;
 
+    //Overloads the copy assignment operator
+    Data & operator=(const Data &copyData);
+
     //Default Constructor
     Data();
 

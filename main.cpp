@@ -17,7 +17,7 @@ void bubbleSort(vector<T> &arr, int size) {
         // Last i elements are already in place
         for (j = 0; j < size - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
-                swap(&arr[j], &arr[j + 1]);
+                swap(arr[j], arr[j + 1]);
                 swapped = true;
             }
         }
@@ -42,17 +42,17 @@ void MinSort(vector<T> &arr, int size) {
 
 //Quick Sort (and Partition) from ZyBooks
 template<typename T>
-int Partition(T numbers[], int i, int k) {
+int Partition(vector<T> &numbers, int i, int k) {
     int l;
     int h;
     int midpoint;
-    int pivot;
-    int temp;
+    Data pivot;
+    Data temp;
     bool done;
 
     //Pick middle element as pivot
     midpoint = i + (k - i) / 2;
-    pivot = numbers[midpoint];
+    //pivot = numbers.at(midpoint);
 
     done = false;
     l = i;
@@ -61,12 +61,14 @@ int Partition(T numbers[], int i, int k) {
     while (!done) {
 
         //Increment l while numbers[l] < pivot
-        while (numbers[l] < pivot) {
+        //while (numbers.at(l) < pivot) {
+        while (numbers.at(l) < numbers.at(midpoint)) {
             ++l;
         }
 
         //Decrement h while pivot < numbers[h]
-        while (pivot < numbers[h]) {
+        //while (pivot < numbers.at(h)) {
+        while (numbers.at(midpoint) < numbers.at(h)) {
             --h;
         }
 
@@ -75,9 +77,10 @@ int Partition(T numbers[], int i, int k) {
             done = true;
         } else {
             //Swap numbers[l] and numbers[h], update l and h
-            temp = numbers[l];
-            numbers[l] = numbers[h];
-            numbers[h] = temp;
+            swap(numbers.at(l), numbers.at(h));
+            /*temp = numbers.at(l);
+            numbers.at(l) = numbers.at(h);
+            numbers.at(h) = temp;*/
 
             ++l;
             --h;
@@ -87,7 +90,7 @@ int Partition(T numbers[], int i, int k) {
 }
 
 template<typename T>
-void Quicksort(T numbers[], int i, int k) {
+void Quicksort(vector<T> &numbers, int i, int k) {
     int j;
 
     //Base case: If there are 1 or zero elements to sort, partition is already sorted
@@ -105,23 +108,24 @@ void Quicksort(T numbers[], int i, int k) {
 
 //Merge Sort from ZyBooks
 template<typename T>
-void Merge(T numbers[], int i, int j, int k) {
+void Merge(vector<T> &numbers, int i, int j, int k) {
     int mergedSize; // Size of merged partition
     int mergePos; // Position to insert merged number
     int leftPos; // Position of elements in left partition
     int rightPos; // Position of elements in right partition
-    int *mergedNumbers = nullptr;
+    //int *mergedNumbers = nullptr;
 
     mergePos = 0;
     mergedSize = k - i + 1;
     leftPos = i; // Initialize left partition position
     rightPos = j + 1; // Initialize right partition position
-    mergedNumbers = new int[mergedSize]; // Dynamically allocates temporary array for merged numbers
+    //mergedNumbers = vector<int> (mergedSize); // Dynamically allocates temporary array for merged numbers
+    vector<Data> mergedNumbers(mergedSize);
 
     // Add smallest element from left or right partition to merged numbers
     while (leftPos <= j && rightPos <= k) {
         if (numbers[leftPos] < numbers[rightPos]) {
-            mergedNumbers[mergePos] = numbers[leftPos];
+            mergedNumbers.at(mergePos) = numbers.at(leftPos);
             ++leftPos;
         } else {
             mergedNumbers[mergePos] = numbers[rightPos];
@@ -153,7 +157,7 @@ void Merge(T numbers[], int i, int j, int k) {
 }
 
 template<typename T>
-void MergeSort(T numbers[], int i, int k) {
+void MergeSort(vector<T> &numbers, int i, int k) {
     int j;
 
     if (i < k) {
@@ -251,6 +255,26 @@ int main() {
     //Merge Sort
     MergeSort(dataV_M, 0, 100000);
     MergeSort(intV_M, 0, 100000);
+
+    //Re-sorts the sorted vectors again by the same set of algorithms
+    //Bubble Sort
+    bubbleSort(dataV_B, 100000);
+    bubbleSort(intV_B, 100000);
+
+    //Selection Sort
+    MinSort(dataV_S, 100000);
+    MinSort(intV_S, 100000);
+
+    //Quick Sort
+    Quicksort(dataV_Q, 0, 100000);
+    Quicksort(intV_Q, 0, 100000);
+
+    //Merge Sort
+    MergeSort(dataV_M, 0, 100000);
+    MergeSort(intV_M, 0, 100000);
+
+
+
 
     return 0;
 }
