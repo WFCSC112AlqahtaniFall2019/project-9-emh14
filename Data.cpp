@@ -20,6 +20,11 @@ bool Data::operator<(const Data &length) const {
 }
 
 //Overloads the comparison operators
+bool Data::operator<=(const Data &length) const {
+    return length.miles <= miles;
+}
+
+//Overloads the comparison operators
 bool Data::operator>(const Data &length) const {
     return miles > length.miles;
 }

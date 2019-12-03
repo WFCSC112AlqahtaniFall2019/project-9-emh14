@@ -2,6 +2,7 @@
 #include <fstream>
 #include "Data.h"
 #include <vector>
+#include <cassert>
 
 using namespace std;
 
@@ -241,38 +242,135 @@ int main() {
     vector<int> intV_M = intV;
 
     //sort the vectors using the implemented algorithms
+    cout << "Sorting..." << endl;
     //Bubble Sort
+
+    cout << "Bubble..." << endl;
     bubbleSort(dataV_B, dataV_B.size());
     bubbleSort(intV_B, intV_B.size());
 
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < dataV_B.size() - 1; i++) {
+        assert(dataV_B.at(i - 1) <= dataV_B.at(i));
+    }
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < intV_B.size() - 1; i++) {
+        assert(intV_B.at(i - 1) <= intV_B.at(i));
+    }
+    cout << "Bubble Done." << endl;
+
+
     //Selection Sort
+    cout << "Selection..." << endl;
     MinSort(dataV_S, dataV_S.size());
     MinSort(intV_S, intV_S.size());
 
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < dataV_S.size() - 1; i++) {
+        assert(dataV_S.at(i - 1) <= dataV_S.at(i));
+    }
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < intV_S.size() - 1; i++) {
+        assert(intV_S.at(i - 1) <= intV_S.at(i));
+    }
+    cout << "Selection Done." << endl;
+
     //Quick Sort
-    Quicksort(dataV_Q, 0, dataV_Q.size());
-    Quicksort(intV_Q, 0, intV_Q.size());
+    cout << "Quick..." << endl;
+    Quicksort(dataV_Q, 0, dataV_Q.size() - 1);
+    Quicksort(intV_Q, 0, intV_Q.size() - 1);
+
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < dataV_Q.size() - 1; i++) {
+        assert(dataV_Q.at(i - 1) <= dataV_Q.at(i));
+    }
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < intV_Q.size() - 1; i++) {
+        assert(intV_Q.at(i - 1) <= intV_Q.at(i));
+    }
+    cout << "Quick Done." << endl;
 
     //Merge Sort
-    MergeSort(dataV_M, 0, dataV_M.size());
-    MergeSort(intV_M, 0, intV_M.size());
+    cout << "Merge..." << endl;
+    MergeSort(dataV_M, 0, dataV_M.size() - 1);
+    MergeSort(intV_M, 0, intV_M.size() - 1);
+
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < dataV_M.size() - 1; i++) {
+        assert(dataV_M.at(i - 1) <= dataV_M.at(i));
+    }
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < intV_M.size() - 1; i++) {
+        assert(intV_M.at(i - 1) <= intV_M.at(i));
+    }
+    cout << "Merge Done." << endl;
+
+    cout << "First Round Done." << endl << endl;
 
     //Re-sorts the sorted vectors again by the same set of algorithms
+    cout << "Re-Sorting..." << endl;
     //Bubble Sort
+    cout << "Bubble..." << endl;
     bubbleSort(dataV_B, dataV_B.size());
     bubbleSort(intV_B, intV_B.size());
 
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < dataV_B.size() - 1; i++) {
+        assert(dataV_B.at(i - 1) <= dataV_B.at(i));
+    }
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < intV_B.size() - 1; i++) {
+        assert(intV_B.at(i - 1) <= intV_B.at(i));
+    }
+    cout << "Bubble Done." << endl;
+
+
     //Selection Sort
+    cout << "Selection..." << endl;
     MinSort(dataV_S, dataV_S.size());
     MinSort(intV_S, intV_S.size());
 
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < dataV_S.size() - 1; i++) {
+        assert(dataV_S.at(i - 1) <= dataV_S.at(i));
+    }
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < intV_S.size() - 1; i++) {
+        assert(intV_S.at(i - 1) <= intV_S.at(i));
+    }
+    cout << "Selection Done." << endl;
+
     //Quick Sort
-    Quicksort(dataV_Q, 0, dataV_Q.size());
-    Quicksort(intV_Q, 0, intV_Q.size());
+    cout << "Quick..." << endl;
+    Quicksort(dataV_Q, 0, dataV_Q.size() - 1);
+    Quicksort(intV_Q, 0, intV_Q.size() - 1);
+
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < dataV_Q.size() - 1; i++) {
+        assert(dataV_Q.at(i - 1) <= dataV_Q.at(i));
+    }
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < intV_Q.size() - 1; i++) {
+        assert(intV_Q.at(i - 1) <= intV_Q.at(i));
+    }
+    cout << "Quick Done." << endl;
 
     //Merge Sort
-    MergeSort(dataV_M, 0, dataV_M.size());
-    MergeSort(intV_M, 0, intV_M.size());
+    cout << "Merge..." << endl;
+    MergeSort(dataV_M, 0, dataV_M.size() - 1);
+    MergeSort(intV_M, 0, intV_M.size() - 1);
+
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < dataV_M.size() - 1; i++) {
+        assert(dataV_M.at(i - 1) <= dataV_M.at(i));
+    }
+    //Unit Test to make sure is sorted
+    for(int i = 1; i < intV_M.size() - 1; i++) {
+        assert(intV_M.at(i - 1) <= intV_M.at(i));
+    }
+    cout << "Merge Done." << endl;
+
+    cout << "Second Round Done." << endl;
 
     return 0;
 }

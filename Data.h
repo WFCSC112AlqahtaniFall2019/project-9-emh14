@@ -24,6 +24,9 @@ public:
     bool operator<(const Data &length) const;
 
     //Overloads the comparison operators
+    bool operator<=(const Data &length) const;
+
+    //Overloads the comparison operators
     bool operator>(const Data &length) const;
 
     //Overloads the copy assignment operator
