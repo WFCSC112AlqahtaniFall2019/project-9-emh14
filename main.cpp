@@ -109,6 +109,7 @@ void Quicksort(vector<T> &numbers, int i, int k) {
 //Merge Sort from ZyBooks
 template<typename T>
 void Merge(vector<T> &numbers, int i, int j, int k) {
+
     int mergedSize; // Size of merged partition
     int mergePos; // Position to insert merged number
     int leftPos; // Position of elements in left partition
@@ -120,7 +121,7 @@ void Merge(vector<T> &numbers, int i, int j, int k) {
     leftPos = i; // Initialize left partition position
     rightPos = j + 1; // Initialize right partition position
     //mergedNumbers = vector<int> (mergedSize); // Dynamically allocates temporary array for merged numbers
-    vector<Data> mergedNumbers(mergedSize);
+    vector<T> mergedNumbers(mergedSize);
 
     // Add smallest element from left or right partition to merged numbers
     while (leftPos <= j && rightPos <= k) {
@@ -128,7 +129,7 @@ void Merge(vector<T> &numbers, int i, int j, int k) {
             mergedNumbers.at(mergePos) = numbers.at(leftPos);
             ++leftPos;
         } else {
-            mergedNumbers[mergePos] = numbers[rightPos];
+            mergedNumbers.at(mergePos) = numbers.at(rightPos);
             ++rightPos;
 
         }
@@ -153,7 +154,7 @@ void Merge(vector<T> &numbers, int i, int j, int k) {
     for (mergePos = 0; mergePos < mergedSize; ++mergePos) {
         numbers[i + mergePos] = mergedNumbers[mergePos];
     }
-    delete[] mergedNumbers;
+    //delete[] mergedNumbers;
 }
 
 template<typename T>
@@ -216,7 +217,7 @@ int main() {
         Data newData = Data(mile, duration, price, payment);
 
         //Repeatedly places the Data objects into a vector
-        dataV.emplace_back(newData);
+        dataV.push_back(newData);
     }
 
     //Four copies of dataV
@@ -241,40 +242,38 @@ int main() {
 
     //sort the vectors using the implemented algorithms
     //Bubble Sort
-    bubbleSort(dataV_B, 100000);
-    bubbleSort(intV_B, 100000);
+    bubbleSort(dataV_B, dataV_B.size());
+    bubbleSort(intV_B, intV_B.size());
 
     //Selection Sort
-    MinSort(dataV_S, 100000);
-    MinSort(intV_S, 100000);
+    MinSort(dataV_S, dataV_S.size());
+    MinSort(intV_S, intV_S.size());
 
     //Quick Sort
-    Quicksort(dataV_Q, 0, 100000);
-    Quicksort(intV_Q, 0, 100000);
+    Quicksort(dataV_Q, 0, dataV_Q.size());
+    Quicksort(intV_Q, 0, intV_Q.size());
 
     //Merge Sort
-    MergeSort(dataV_M, 0, 100000);
-    MergeSort(intV_M, 0, 100000);
+    MergeSort(dataV_M, 0, dataV_M.size());
+    MergeSort(intV_M, 0, intV_M.size());
 
     //Re-sorts the sorted vectors again by the same set of algorithms
     //Bubble Sort
-    bubbleSort(dataV_B, 100000);
-    bubbleSort(intV_B, 100000);
+    bubbleSort(dataV_B, dataV_B.size());
+    bubbleSort(intV_B, intV_B.size());
 
     //Selection Sort
-    MinSort(dataV_S, 100000);
-    MinSort(intV_S, 100000);
+    MinSort(dataV_S, dataV_S.size());
+    MinSort(intV_S, intV_S.size());
 
     //Quick Sort
-    Quicksort(dataV_Q, 0, 100000);
-    Quicksort(intV_Q, 0, 100000);
+    Quicksort(dataV_Q, 0, dataV_Q.size());
+    Quicksort(intV_Q, 0, intV_Q.size());
 
     //Merge Sort
-    MergeSort(dataV_M, 0, 100000);
-    MergeSort(intV_M, 0, 100000);
-
-
-
+    MergeSort(dataV_M, 0, dataV_M.size());
+    MergeSort(intV_M, 0, intV_M.size());
 
     return 0;
 }
+

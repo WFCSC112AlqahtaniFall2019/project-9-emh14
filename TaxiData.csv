@@ -1744,7 +1744,7 @@
 0.5,300,6,Cash
 0,420,7.5,Cash
 17.7,1200,55.6,Credit Card
-0,,3.5,Cash
+0,0,3.5,Cash
 3.2,780,14,Credit Card
 0,1680,58.8,Credit Card
 2.3,480,10,Cash
@@ -5064,7 +5064,7 @@
 0,0,6.3,Credit Card
 0.9,420,7.25,Cash
 1.6,420,6.25,Cash
-0,,0,Unknown
+0,0,0,Unknown
 1.1,360,7.25,Credit Card
 1.8,720,9,Cash
 1.2,360,7.5,Cash
@@ -6316,7 +6316,7 @@
 3,780,11.5,Cash
 0.7,1200,41.1,Credit Card
 0,480,6.75,Cash
-0,,0,Unknown
+0,0,0,Unknown
 0,1080,11.75,Cash
 0,240,6.25,Cash
 1.5,840,10,Cash
@@ -9126,7 +9126,7 @@
 0.6,180,4.75,Cash
 3.1,840,13.8,Credit Card
 0,360,7,Cash
-0.3,,4,Cash
+0.3,0,4,Cash
 1.89,600,10,Cash
 0.8,420,10.25,Credit Card
 0.3,180,5.25,Cash
@@ -12752,7 +12752,7 @@
 4.7,840,18,Credit Card
 0,420,8,Credit Card
 2.3,660,9.5,Cash
-0,,0,Unknown
+0,0,0,Unknown
 16.4,3360,55.2,Credit Card
 17.6,1380,47.25,Cash
 1.7,360,7.5,Cash
@@ -18690,7 +18690,7 @@
 0,1080,12.75,Cash
 0.4,600,10,Credit Card
 6,1260,20.25,Cash
-0,,0,Unknown
+0,0,0,Unknown
 0.4,180,6.75,Credit Card
 0,120,6.75,Credit Card
 0,480,8.5,Cash
@@ -28507,7 +28507,7 @@
 0.5,180,7.5,Credit Card
 13.02,1740,47.1,Credit Card
 0.3,180,7.25,Credit Card
-0,,0,Unknown
+0,0,0,Unknown
 0.2,600,13.75,Cash
 2.8,840,14.5,Credit Card
 0,60,3.5,Cash
@@ -37074,7 +37074,7 @@
 0.7,240,6,Credit Card
 12.4,2280,39.5,Cash
 3,1020,12.5,Cash
-0,,0,Unknown
+0,0,0,Unknown
 0,0,7.5,Credit Card
 0,1500,16.75,Cash
 3.6,840,12.75,Cash
@@ -38988,7 +38988,7 @@
 17.8,1860,49,Cash
 0,0,11.1,Credit Card
 1.2,540,11.25,Credit Card
-0,,3.25,Cash
+0,0,3.25,Cash
 0,0,3.75,Cash
 0,0,6,Cash
 3.3,600,22.5,Credit Card
@@ -54753,7 +54753,7 @@
 0.7,360,7.5,Credit Card
 0.6,120,6.75,Credit Card
 0.5,300,8.75,Credit Card
-0,,0,Unknown
+0,0,0,Unknown
 0.7,180,5.25,Cash
 6.7,900,18.75,Cash
 1.5,540,11.25,Credit Card
@@ -67025,7 +67025,7 @@
 3.1,960,12,Cash
 1.6,480,9,Cash
 2.5,480,8.05,Cash
-0,,0,Credit Card
+0,0,0,Credit Card
 0,0,11.5,Credit Card
 0,300,8.25,Credit Card
 0,0,14,Cash
@@ -74800,7 +74800,7 @@
 0,1320,51.75,Credit Card
 0,0,8.78,Credit Card
 0.1,600,9.25,Unknown
-1.2,,7.75,Cash
+1.2,0,7.75,Cash
 1.8,600,8.5,Cash
 1.4,600,9,Cash
 1.8,600,10,Cash
