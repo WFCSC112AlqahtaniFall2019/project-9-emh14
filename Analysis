@@ -14,3 +14,6 @@ fully sorted. The inefficiency of Selection Sort arises when it takes a long tim
 data set grows, a large number of comparisons needs to take place even if the data is already sorted. In the best case,
 the algorithm still traverses the whole list in order to be sure the initial selection was correct. In the worst case,
 similar to Bubble Sort, you still make the comparisons but add the swap when you find terms out of order.
+
+Because both functions use two nested for loops, on the worst case data set, the Big O Notation for Bubble and Selection
+sort is O(N^2).
