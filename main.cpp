@@ -190,6 +190,12 @@ int main() {
 
     //link outFile
     outFile.open("../TimeFile.csv");
+    if (!outFile.is_open()) {
+        cout << "File not open!" << endl;
+        return 1;
+    } else {
+        cout << "Writing to TimeFile.csv..." << endl;
+    }
 
     //Link csv file
     dataFile.open("../TaxiData.csv");
@@ -235,7 +241,7 @@ int main() {
         intV.push_back(rand() % 100);
     }
 
-    bool loop = false;
+    bool loop = true;
     //Test 100 times with the size of N
     for (int N = dataV.size() / 100; N <= dataV.size(); N += dataV.size() / 100) {
         if (!loop) {
@@ -465,13 +471,16 @@ int main() {
         }
         cout << "Merge Done." << endl;
 
-        cout << "Second Round Done." << endl;
+        cout << "Second Round Done." << endl << endl;
 
         //print times
-        outFile << N << "," << elapsed_dataV_B << "," << elapsed_intV_B << "," << elapsed_dataV_S << "," << elapsed_intV_S
-             << "," << elapsed_dataV_Q << "," << elapsed_intV_Q << "," << elapsed_dataV_M << "," << elapsed_intV_M
-             << "," << elapsed_dataV_B2 << "," << elapsed_intV_B2 << "," << elapsed_dataV_S2 << "," << elapsed_intV_S2
-             << "," << elapsed_dataV_Q2 << "," << elapsed_intV_Q2 << "," << elapsed_dataV_M2 << "," << elapsed_intV_M2;
+        outFile << N << "," << elapsed_dataV_B << "," << elapsed_intV_B << "," << elapsed_dataV_S << ","
+                << elapsed_intV_S
+                << "," << elapsed_dataV_Q << "," << elapsed_intV_Q << "," << elapsed_dataV_M << "," << elapsed_intV_M
+                << "," << elapsed_dataV_B2 << "," << elapsed_intV_B2 << "," << elapsed_dataV_S2 << ","
+                << elapsed_intV_S2
+                << "," << elapsed_dataV_Q2 << "," << elapsed_intV_Q2 << "," << elapsed_dataV_M2 << ","
+                << elapsed_intV_M2 << endl;
     }
 
     //close Files
