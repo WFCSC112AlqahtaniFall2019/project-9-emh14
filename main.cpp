@@ -186,6 +186,10 @@ int main() {
 
     //declare fstream type variables
     ifstream dataFile;
+    ofstream outFile;
+
+    //link outFile
+    outFile.open("../TimeFile.csv");
 
     //Link csv file
     dataFile.open("../TaxiData.csv");
@@ -464,12 +468,15 @@ int main() {
         cout << "Second Round Done." << endl;
 
         //print times
-        cout << N << "," << elapsed_dataV_B << "," << elapsed_intV_B << "," << elapsed_dataV_S << "," << elapsed_intV_S
+        outFile << N << "," << elapsed_dataV_B << "," << elapsed_intV_B << "," << elapsed_dataV_S << "," << elapsed_intV_S
              << "," << elapsed_dataV_Q << "," << elapsed_intV_Q << "," << elapsed_dataV_M << "," << elapsed_intV_M
              << "," << elapsed_dataV_B2 << "," << elapsed_intV_B2 << "," << elapsed_dataV_S2 << "," << elapsed_intV_S2
              << "," << elapsed_dataV_Q2 << "," << elapsed_intV_Q2 << "," << elapsed_dataV_M2 << "," << elapsed_intV_M2;
     }
 
+    //close Files
+    dataFile.close();
+    outFile.close();
 
     return 0;
 }
