@@ -1,0 +1,16 @@
+Bubble Sort and Selection Sort are the two least efficient ways of sorting this data, especially as the length of the
+vector grows.
+
+Firstly, Bubble Sort uses two nested loops to compare neighboring elements and swaps those two elements if they are out
+of order. The algorithm will continue looping and pass through the entire data set until no swaps are made. This means
+that even in the best case with a sorted data set, Bubble Sort must still iterate through and take the time to check
+each pair of numbers (seen in the DataV_B2 and intV_B2 graphs). The worst case is more complex, since swaps actually
+need to take place. This might mean to bring a single value from the, for example, 100,000th spot down to the 1st,
+and this can prove to take up to more than five minutes.
+
+Secondly, Selection Sort also uses nested loops, but searches the minimum element to swap with the element in the
+minimum location. The minimum location increases with each iteration and must continue that pattern until the list is
+fully sorted. The inefficiency of Selection Sort arises when it takes a long time to find the minimum value. As the
+data set grows, a large number of comparisons needs to take place even if the data is already sorted. In the best case,
+the algorithm still traverses the whole list in order to be sure the initial selection was correct. In the worst case,
+similar to Bubble Sort, you still make the comparisons but add the swap when you find terms out of order.
