@@ -1,6 +1,8 @@
-//
-// Created by Ethan Harrison on 11/25/19.
-//
+/* Ethan Harrison
+ * CSC 112
+ * Project 9
+ * Templates and Asymptotic Analysis
+ * */
 
 #ifndef PROJECT9_DATA_H
 #define PROJECT9_DATA_H

@@ -1,3 +1,9 @@
+/* Ethan Harrison
+ * CSC 112
+ * Project 9
+ * Templates and Asymptotic Analysis
+ * */
+
 #include <iostream>
 #include <fstream>
 #include "Data.h"
