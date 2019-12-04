@@ -16,12 +16,12 @@ ostream &operator<<(ostream &os, const Data &data) {
 
 //Overloads the comparison operators
 bool Data::operator<(const Data &length) const {
-    return length.miles < miles;
+    return miles < length.miles;
 }
 
 //Overloads the comparison operators
 bool Data::operator<=(const Data &length) const {
-    return length.miles <= miles;
+    return miles <= length.miles;
 }
 
 //Overloads the comparison operators

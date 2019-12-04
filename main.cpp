@@ -47,13 +47,13 @@ int Partition(vector<T> &numbers, int i, int k) {
     int l;
     int h;
     int midpoint;
-    Data pivot;
-    Data temp;
+    T pivot;
+    T temp;
     bool done;
 
-    //Pick middle element as pivot
+    /* Pick middle element as pivot */
     midpoint = i + (k - i) / 2;
-    //pivot = numbers.at(midpoint);
+    pivot = numbers.at(midpoint);
 
     done = false;
     l = i;
@@ -61,32 +61,33 @@ int Partition(vector<T> &numbers, int i, int k) {
 
     while (!done) {
 
-        //Increment l while numbers[l] < pivot
-        //while (numbers.at(l) < pivot) {
-        while (numbers.at(l) < numbers.at(midpoint)) {
+        /* Increment l while numbers[l] < pivot */
+        while (numbers.at(l) < pivot) {
             ++l;
         }
 
-        //Decrement h while pivot < numbers[h]
-        //while (pivot < numbers.at(h)) {
-        while (numbers.at(midpoint) < numbers.at(h)) {
+        /* Decrement h while pivot < numbers[h] */
+        while (pivot < numbers.at(h)) {
             --h;
         }
 
-        //If there are zero or one elements remaining, all numbers are partitioned. Return h
+        /* If there are zero or one elements remaining,
+         all numbers are partitioned. Return h */
         if (l >= h) {
             done = true;
-        } else {
-            //Swap numbers[l] and numbers[h], update l and h
-            swap(numbers.at(l), numbers.at(h));
-            /*temp = numbers.at(l);
+        }
+        else {
+            /* Swap numbers[l] and numbers[h],
+             update l and h */
+            temp = numbers.at(l);
             numbers.at(l) = numbers.at(h);
-            numbers.at(h) = temp;*/
+            numbers.at(h) = temp;
 
             ++l;
             --h;
         }
     }
+
     return h;
 }
 
@@ -94,15 +95,18 @@ template<typename T>
 void Quicksort(vector<T> &numbers, int i, int k) {
     int j;
 
-    //Base case: If there are 1 or zero elements to sort, partition is already sorted
+    /* Base case: If there are 1 or zero elements to sort,
+     partition is already sorted */
     if (i >= k) {
         return;
     }
 
-    //Partition the data within the array. Value j returned from partitioning is location of last element in low partition
+    /* Partition the data within the array. Value j returned
+     from partitioning is location of last element in low partition. */
     j = Partition(numbers, i, k);
 
-    //Recursively sort low partition (i to j) and high partition (j + 1 to k)
+    /* Recursively sort low partition (i to j) and
+     high partition (j + 1 to k) */
     Quicksort(numbers, i, j);
     Quicksort(numbers, j + 1, k);
 }
@@ -231,8 +235,8 @@ int main() {
     srand(time(NULL)); // seed random number generator with time
 
     //fill vector with random integers
-    for (int i = 0; i < intV.size(); i++) {
-        intV[i] = rand() % 100;
+    for (int i = 0; i < dataV.size(); i++) {
+        intV.push_back(rand() % 100);
     }
 
     //Four copies of intV
@@ -254,7 +258,7 @@ int main() {
         assert(dataV_B.at(i - 1) <= dataV_B.at(i));
     }
     //Unit Test to make sure is sorted
-    for(int i = 1; i < intV_B.size() - 1; i++) {
+    for(int i = 1; i < intV_B.size(); i++) {
         assert(intV_B.at(i - 1) <= intV_B.at(i));
     }
     cout << "Bubble Done." << endl;
